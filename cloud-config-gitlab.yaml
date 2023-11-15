@@ -1,0 +1,27 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+preserve_hostname: false
+hostname: gitlab
+fqdn: gitlab.arantxa.gonzalonazareno.org
+
+users:
+  - name: arantxa
+    sudo: ALL=(ALL:ALL) ALL
+    shell: /bin/bash
+    passwd: arantxa
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDcIFhG/rVh1QHjI7JxLOyjcAPhkHmqhgcApsrBhpXp70Mlqm451hWi3IbmlCF3OCpjYMA/XcTEKbLtlNiOYe6gBFncYUFqt6k68qIhMtVCYYEOgst/ghNTygvMpXcLT/alN/jWX/Dpqd6IxdcblC4p2tlJHiRjmEncz+nkhys8SkKSdnqBfD9LT1NOZYbOsmO5OgUXzlrhgvEWmPB4l22XnmRRBkQQGbook37uH0Y17R+GdVGz0aWAoyhU1awcYoyTRorzgVmXHKEF9lonFXgGcZI+peq2A2lXJSRff7upQC7ZGzxtWSXGq54YWWfW9aGECzW1QDfPxOAFzDLD059npADg9ObSbqH78OSz0f1Xh3rGY69BY+TvR9W6EK32kgvoSeXb6DDqqZ8xfgmA3k++SX8bfQGsWiVeO+WMD25zGTOBIl0OqhGLWB7i791floJcc95NUYqucs4ywxp6UJ+QAOtyveVCQNBPP6BDkx3NmZo4nIIu/Z5wF1zICpMb0TU= arantxa@debian
+
+  - name: profesor
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    passwd: profesor
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCmjoVIoZCx4QFXvljqozXGqxxlSvO7V2aizqyPgMfGqnyl0J9YXo6zrcWYwyWMnMdRdwYZgHqfiiFCUn2QDm6ZuzC4Lcx0K3ZwO2lgL4XaATykVLneHR1ib6RNroFcClN69cxWsdwQW6dpjpiBDXf8m6/qxVP3EHwUTsP8XaOV7WkcCAqfYAMvpWLISqYme6e+6ZGJUIPkDTxavu5JTagDLwY+py1WB53eoDWsG99gmvyit2O1Eo+jRWN+mgRHIxJTrFtLS6o4iWeshPZ6LvCZ/Pum12Oj4B4bjGSHzrKjHZgTwhVJ/LDq3v71/PP4zaI3gVB9ZalemSxqomgbTlnT jose@debian
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCfk9mRtOHM3T1KpmGi0KiN2uAM6CDXM3WFcm1wkzKXx7RaLtf9pX+KCuVqHdy/N/9d9wtH7iSmLFX/4gQKQVG00jHiGf3ABufWeIpjmHtT1WaI0+vV47fofEIjDDfSZPlI3p5/c7tefHsIAK6GbQn31yepAcFYy9ZfqAh8H/Y5eLpf3egPZn9Czsvx+lm0I8Q+e/HSayRaiAPUukF57N2nnw7yhPZCHSZJqFbXyK3fVQ/UQVBeNS2ayp0my8X9sIBZnNkcYHFLIWBqJYdnu1ZFhnbu3yy94jmJdmELy3+54hqiwFEfjZAjUYSl8eGPixOfdTgc8ObbHbkHyIrQ91Kz rafa@eco
+
+chpasswd:
+   list: |
+       root:root
+   expire: False
