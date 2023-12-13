@@ -1,0 +1,29 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+preserve_hostname: false
+hostname: deployserver
+
+users:
+  - name: arantxa
+    sudo: ALL=(ALL:ALL) ALL
+    shell: /bin/bash
+    passwd: arantxa
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDcIFhG/rVh1QHjI7JxLOyjcAPhkHmqhgcApsrBhpXp70Mlqm451hWi3IbmlCF3OCpjYMA/XcTEKbLtlNiOYe6gBFncYUFqt6k68qIhMtVCYYEOgst/ghNTygvMpXcLT/alN/jWX/Dpqd6IxdcblC4p2tlJHiRjmEncz+nkhys8SkKSdnqBfD9LT1NOZYbOsmO5OgUXzlrhgvEWmPB4l22XnmRRBkQQGbook37uH0Y17R+GdVGz0aWAoyhU1awcYoyTRorzgVmXHKEF9lonFXgGcZI+peq2A2lXJSRff7upQC7ZGzxtWSXGq54YWWfW9aGECzW1QDfPxOAFzDLD059npADg9ObSbqH78OSz0f1Xh3rGY69BY+TvR9W6EK32kgvoSeXb6DDqqZ8xfgmA3k++SX8bfQGsWiVeO+WMD25zGTOBIl0OqhGLWB7i791floJcc95NUYqucs4ywxp6UJ+QAOtyveVCQNBPP6BDkx3NmZo4nIIu/Z5wF1zICpMb0TU= arantxa@debian
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9Oqtnec1kx/MPMYCbzJLBeMpxB5ldWyZk76Nlo3Q67Ut0yEmvAv5Wm0Fy3twJc2y3HsZMw4Yj9at7cWm+Sju7KOZouvvOD2GMmLLLlSblGUdT8OJULRrymhsvTesAXXict9P44RjyFd1Jtl1EUP4JJCBjhA3c4yVj8UyGJjA/HVd42EsRGN2naMPFMP+ivJp6v1v/ZjiSJ2dbqDpQrEL+9u2WR+xKweBpIRdOPeiHFbXISftq1Y0lkyln4OYR9oBi96q43ANQKDrzlpwjoH12ZHvVy96mvhidkLVQPu/BIdOWxxqILQR8bez6W4wie1hI72NHjyfBngE5xBCB98cm6+YcwR1KJbHoki0kf+xhpMbTbAENOBKron3ElhFRmW8+ndMgzoBFgUgSqe0LRTV8BJkfqvZQT8ET8ezpO9VoKK9Mc895eM/hU2DFi2jbw6Hf2xX5uAaKwmYGKakOVTPxfFjDAeXgcLRdfIUserKcEg+hWSwnAXO8nYblZb/0Srs= arantxa@gitlab
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC9yCoa6ohTTKWqAuu4cINctpfK7qznIYZKOTygCVK1aC5pomYKCWY0UAGOlEkg9NXLHbBXdyMWjrCYzODjknncrD5zdE8fYdBM9g5ZETxS4XrwMa8KlrAdvPj0ORDrOBx4MQkst8W24+8s2QMWP5UKX69NvO55sZDyFf//tTN27mD1wTi9vAj///SV5VsJkCGaux7eVWjHj4N1G104+WddMvEMZgZBEF4bBOY8TErNIgL2PZ5TJB1IRJLYwcX05dq6mEBpZRazsRnxAHAUYqlz/yV/P7Fq/SA6E7Q5WR4DpK4oZvSITFUu/TD/RXCTIditc5MoEeTWTucYkMUnYZPIZfhsVW1zleaIma9fQ0y+YD7W9tOxHKcEwK13qCjI4UNYPJwmQ/6i26vZyBh56wNew2hbd67YALCH2q+Xq1dz3NA/o9EVWvnwoAo/MhTvwkDn13V2U9zJBosF4YHPhzMM1loKk18syUom16HdtHXiv9wzZGjHdzaOzXb211F3Wx8= root@gitlab
+
+  - name: profesor
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    passwd: profesor
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCmjoVIoZCx4QFXvljqozXGqxxlSvO7V2aizqyPgMfGqnyl0J9YXo6zrcWYwyWMnMdRdwYZgHqfiiFCUn2QDm6ZuzC4Lcx0K3ZwO2lgL4XaATykVLneHR1ib6RNroFcClN69cxWsdwQW6dpjpiBDXf8m6/qxVP3EHwUTsP8XaOV7WkcCAqfYAMvpWLISqYme6e+6ZGJUIPkDTxavu5JTagDLwY+py1WB53eoDWsG99gmvyit2O1Eo+jRWN+mgRHIxJTrFtLS6o4iWeshPZ6LvCZ/Pum12Oj4B4bjGSHzrKjHZgTwhVJ/LDq3v71/PP4zaI3gVB9ZalemSxqomgbTlnT jose@debian
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCfk9mRtOHM3T1KpmGi0KiN2uAM6CDXM3WFcm1wkzKXx7RaLtf9pX+KCuVqHdy/N/9d9wtH7iSmLFX/4gQKQVG00jHiGf3ABufWeIpjmHtT1WaI0+vV47fofEIjDDfSZPlI3p5/c7tefHsIAK6GbQn31yepAcFYy9ZfqAh8H/Y5eLpf3egPZn9Czsvx+lm0I8Q+e/HSayRaiAPUukF57N2nnw7yhPZCHSZJqFbXyK3fVQ/UQVBeNS2ayp0my8X9sIBZnNkcYHFLIWBqJYdnu1ZFhnbu3yy94jmJdmELy3+54hqiwFEfjZAjUYSl8eGPixOfdTgc8ObbHbkHyIrQ91Kz rafa@eco
+
+chpasswd:
+   list: |
+       root:root
+       arantxa:arantxa
+   expire: False
