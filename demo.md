@@ -40,6 +40,7 @@ Me salgo y accedo con el usuario nuevo.
 ## Cambios en el repositorio
 
 - Hacer cambio en app (poner en pag. inicio “Hola, estamos haciendo la demo en clase”)
+- nano src/app/templates/index.html 
 - Hacer cambio en pipeline (subir imagen con el nombre prueba-$proyecto-integrado
 - Hacer commit y push
 
