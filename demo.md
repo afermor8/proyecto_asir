@@ -24,7 +24,7 @@ Me salgo y accedo con el usuario nuevo.
         --url "http://172.22.200.23" \
         --registration-token 8xZnRpgRGL22g2SMMRMW \
         --executor shell \
-        --description "Runner shell"
+        --description "DEMO runner shell"
 ```
 
 - Comprobar fichero /etc/gitlab-runner/config.toml
